@@ -15,7 +15,6 @@ INSERT INTO ingredientes (nome) VALUES
 ("Milho"),
 ("Ervilha"),
 ("Molho Especial");
-
 INSERT INTO lanches (nome) VALUES 
 ("X-Burguer"),
 ("X-Salada"),
@@ -23,7 +22,6 @@ INSERT INTO lanches (nome) VALUES
 ("X-Bacon"),
 ("Hot Dog"),
 ("X-Frangão");
-
 INSERT INTO lanche_ingredientes (id_ingrediente,id_lanche) VALUES
 (1,1),
 (2,1),
@@ -63,12 +61,38 @@ INSERT INTO lanche_ingredientes (id_ingrediente,id_lanche) VALUES
 (4,6),
 (5,6),
 (6,6);
-
 INSERT INTO pedidos (nome_cliente,rua,bairro,numero) VALUES
 ("Percival","Rua 1","Bairro A", 1),
 ("Douglas","Rua 2","Bairro B", 5),
 ("Abelardo","Rua 3","Bairro C", 10),
 ("Nelson","Rua 4","Bairro D", 15),
 ("Pedro","Rua 5","Bairro E", 20);
-
+INSERT INTO lanche_pedido (id_lanche,id_pedido) VALUES
+(1,1),
+(2,2),
+(3,2),
+(4,3),
+(5,3),
+(6,3),
+(1,4),
+(2,4),
+(3,4),
+(4,4),
+(1,5),
+(2,5),
+(4,5),
+(5,5),
+(6,5);
+INSERT INTO lanche_pedido_ingredientes_adicionados (id_lanche_pedido,id_ingrediente) VALUES 
+(1,8), 
+(10,4), 
+(10,5),
+(5,3), 
+(15,16); 
+INSERT INTO lanche_pedido_ingredientes_removidos (id_lanche_pedido,id_ingrediente) VALUES 
+(2,4), 
+(9,14), 
+(9,15), 
+(13,7),  
+(14,9); 
 
