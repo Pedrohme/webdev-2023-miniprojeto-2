@@ -11,59 +11,79 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/fazerPedido.css" />
+    <title>Chess Burger</title>
 </head>
 <body>
 <main>
-    <h1>Chess Burger</h1>
-    <h2>Escolha seus lanches</h2>
-    <ul>
+    <h1 class="title">Chess Burger</h1>
+    <h2 class="subtitle">Escolha seus lanches</h2>
+    <ul class="cards">
         <% for (Lanche lanche : lanches) { %>
         <li>
-            <section>
-                <h3><%=lanche.getNome()%>
+            <section class="card">
+                <h3 class="card-title"><%=lanche.getNome()%>
                 </h3>
+                <h4 class="card-subtitle">Ingredientes:</h4>
                 <ul>
                     <% for (Ingrediente ingrediente : lanche.getIngredientes()) { %>
-                    <li><%=ingrediente.getNome()%>
+                    <li class="list-item"><%=ingrediente.getNome()%>
                     </li>
                     <%}%>
                 </ul>
-                <button>Adicionar ao pedido</button>
+                <div class="center">
+                    <button class="btn center">Adicionar ao pedido</button>
+                </div>
             </section>
         </li>
         <%}%>
     </ul>
-    <h2>Seu pedido</h2>
-    <ul>
+    <h2 class="subtitle">Seu pedido</h2>
+    <ul class="cards">
         <li>
-            <section>
-                <h3>{Nome do lanche}</h3>
-                <button>Remover do pedido</button>
+            <section class="card">
+                <h3 class="card-title">{Nome do lanche}</h3>
+                <h4 class="card-subtitle">Adicionais:</h4>
+                <ul>
+                    <li class="list-item">{Adicional 1}</li>
+                </ul>
+                <h4 class="card-subtitle">Removidos:</h4>
+                <ul>
+                    <li class="list-item">{Ingrediente 1}</li>
+                </ul>
                 <article>
-                    <h3>Que tal subir o rating do seu lanche?</h3>
+                    <h4 class="card-subtitle">
+                        Que tal subir o rating do seu lanche?
+                    </h4>
                     <ul>
                         <li>
-                            <p>{Adicional 1}</p>
-                            <button>Adicionar no lanche</button>
+                            <p class="list-item">{Adicional 1}</p>
+                            <button class="btn">Adicionar</button>
                         </li>
                     </ul>
                 </article>
                 <article>
-                    <h3>Deseja remover alguma peça dessa posição?</h3>
+                    <h4 class="card-subtitle">
+                        Deseja remover alguma peça dessa posição?
+                    </h4>
                     <ul>
                         <li>
-                            <p>{Ingrediente 1}</p>
-                            <button>Remover do lanche</button>
+                            <p class="list-item">{Ingrediente 1}</p>
+                            <button class="btn">Remover</button>
                         </li>
                     </ul>
                 </article>
+                <div class="center">
+                    <button class="btn">Excluir do pedido</button>
+                </div>
             </section>
         </li>
     </ul>
-    <div>
-        <button>Cancelar pedido</button>
-        <button>Confirmar pedido</button>
+    <div class="btn-div">
+        <button class="btn">Cancelar pedido</button>
+        <button class="btn">Confirmar pedido</button>
     </div>
 </main>
 </body>
