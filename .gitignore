@@ -23,3 +23,5 @@
 hs_err_pid*
 /miniprojeto_2/nbproject/private/
 .idea
+/miniprojeto_2/build/
+out/
