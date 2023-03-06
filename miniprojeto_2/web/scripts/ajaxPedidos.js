@@ -2,7 +2,10 @@ $(() => {
     window.setInterval(() => {
         getPedidosAndUpdateAjax();
     }, 1000 * 10);
+    
+    $('#btn-atualizar').on('click',getPedidosAndUpdateAjax);
 });
+
 
 function getPedidosAndUpdateAjax() {
     $.ajax({
