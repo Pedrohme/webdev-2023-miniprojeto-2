@@ -27,13 +27,8 @@ public class LancheDao {
 
     public List<Lanche> getAllLanches() throws SQLException {
         List<Lanche> lanches = new ArrayList<>();
-        try {
-            Connection conn = DbHelper.getConnection();
 
-            PreparedStatement preparedStatement = conn.prepareStatement(GET_LANCHES_AND_INGREDIENTES_QUERY);
-
-            ResultSet rs = preparedStatement.executeQuery();
-
+        try (Connection conn = DbHelper.getConnection(); PreparedStatement preparedStatement = conn.prepareStatement(GET_LANCHES_AND_INGREDIENTES_QUERY); ResultSet rs = preparedStatement.executeQuery()) {
             int currentId = 0;
             Lanche currentLanche = null;
             while (rs.next()) {
@@ -55,7 +50,6 @@ public class LancheDao {
                 assert currentLanche != null;
                 currentLanche.addIngrediente(newIngrediente);
             }
-
         } catch (SQLException e) {
             DbHelper.printSQLException(e);
         }

@@ -14,6 +14,8 @@ public class Lanche {
         this.id = id;
         this.nome = nome;
         this.ingredientes = new ArrayList<Ingrediente>();
+        this.adicionados = new ArrayList<Ingrediente>();
+        this.removidos = new ArrayList<Ingrediente>();
     }
 
     public Lanche(int id, String nome, List<Ingrediente> ingredientes, List<Ingrediente> adicionados, List<Ingrediente> removidos) {
@@ -66,5 +68,13 @@ public class Lanche {
 
     public void addIngrediente(Ingrediente ingrediente) {
         this.ingredientes.add(ingrediente);
+    }
+
+    public void addAdicionado(Ingrediente ingrediente) {
+        this.adicionados.add(ingrediente);
+    }
+
+    public void addRemovido(Ingrediente ingrediente) {
+        this.removidos.add(ingrediente);
     }
 }

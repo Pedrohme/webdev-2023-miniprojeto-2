@@ -14,7 +14,7 @@
             <ul class="cards">
                 <li>
                     <section class="card">
-                        <h2 class="card-title">Pedido #{Número do pedido}</h2>
+                        <h2 class="card-title">Pedido</h2>
                         <ul>
                             <li>
                                 <article>

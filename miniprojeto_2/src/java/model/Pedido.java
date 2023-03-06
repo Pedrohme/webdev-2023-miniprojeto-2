@@ -1,18 +1,31 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pedido {
     private int id;
-    private int nomeCliente;
+    private String nomeCliente;
     private String rua;
     private String bairro;
     private String numero;
+    private List<LanchePedido> lanches;
 
-    public Pedido(int id, int nomeCliente, String rua, String bairro, String numero) {
+    public List<LanchePedido> getLanches() {
+        return lanches;
+    }
+
+    public void setLanches(List<LanchePedido> lanches) {
+        this.lanches = lanches;
+    }
+
+    public Pedido(int id, String nomeCliente, String rua, String bairro, String numero) {
         this.id = id;
         this.nomeCliente = nomeCliente;
         this.rua = rua;
         this.bairro = bairro;
         this.numero = numero;
+        this.lanches = new ArrayList<>();
     }
 
     public int getId() {
@@ -23,11 +36,11 @@ public class Pedido {
         this.id = id;
     }
 
-    public int getNomeCliente() {
+    public String getNomeCliente() {
         return nomeCliente;
     }
 
-    public void setNomeCliente(int nomeCliente) {
+    public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
     }
 
