@@ -15,11 +15,19 @@
     <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/fazerPedido.css" />
     <title>Chess Burger</title>
+    
+    <script
+      src="https://code.jquery.com/jquery-1.10.2.js"
+      type="text/javascript"
+    ></script>
+    <script src="scripts/adicionar.js" type="text/javascript"></script>
+
 </head>
 <body>
 <main>
     <h1 class="title">Chess Burger</h1>
     <h2 class="subtitle">Escolha seus lanches</h2>
+    <ul style="display: none;" id="adicionais"></ul>
     <ul class="cards">
         <% for (Lanche lanche : lanches) { %>
         <li>
@@ -29,19 +37,47 @@
                 <h4 class="card-subtitle">Ingredientes:</h4>
                 <ul>
                     <% for (Ingrediente ingrediente : lanche.getIngredientes()) { %>
-                    <li class="list-item"><%=ingrediente.getNome()%>
-                    </li>
+                    
+                    <jsp:element name="li">
+                        <jsp:attribute name="data-id">
+                            <%=ingrediente.getId()%>
+                        </jsp:attribute>
+                        <jsp:attribute name="class">
+                            list-item
+                        </jsp:attribute>
+                        <jsp:attribute name="data-lanche">
+                            <%=lanche.getId()%>
+                        </jsp:attribute>
+                        <jsp:body>
+                            <%=ingrediente.getNome()%>
+                        </jsp:body>
+                    </jsp:element>
+                  
                     <%}%>
                 </ul>
+
                 <div class="center">
-                    <button class="btn center">Adicionar ao pedido</button>
+                    <jsp:element name="button">
+                        <jsp:attribute name="class">
+                            btn center add-lanche
+                        </jsp:attribute>
+                        <jsp:attribute name="data-nome">
+                            <%=lanche.getNome()%>
+                        </jsp:attribute>
+                        <jsp:attribute name="data-id">
+                            <%=lanche.getId()%>
+                        </jsp:attribute>
+                        <jsp:body>
+                            Adicionar ao pedido
+                        </jsp:body>
+                    </jsp:element>
                 </div>
             </section>
         </li>
         <%}%>
     </ul>
     <h2 class="subtitle">Seu pedido</h2>
-    <ul class="cards">
+    <ul class="cards" id="pedidos">
         <li>
             <section class="card">
                 <h3 class="card-title">{Nome do lanche}</h3>
