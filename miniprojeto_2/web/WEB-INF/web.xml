@@ -8,6 +8,10 @@
         <servlet-name>PedidoServlet</servlet-name>
         <servlet-class>controller.PedidoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PedidoAjaxServlet</servlet-name>
+        <servlet-class>controller.PedidoAjaxServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetLanchesServlet</servlet-name>
         <url-pattern>/GetLanchesServlet</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>PedidoServlet</servlet-name>
         <url-pattern>/PedidoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PedidoAjaxServlet</servlet-name>
+        <url-pattern>/PedidoAjaxServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
