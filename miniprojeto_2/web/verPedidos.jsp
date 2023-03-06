@@ -14,11 +14,6 @@
     <link rel="stylesheet" href="./styles/reset.css"/>
     <link rel="stylesheet" href="./styles/index.css"/>
     <link rel="stylesheet" href="./styles/verPedido.css"/>
-    <script
-            src="https://code.jquery.com/jquery-1.10.2.js"
-            type="text/javascript"
-    ></script>
-    <script src="scripts/ajaxPedidos.js" type="text/javascript"></script>
     <title>Chess Burger</title>
 </head>
 <body>
@@ -30,17 +25,6 @@
             <section class="card">
                 <h2 class="card-title">Pedido número: <%=pedido.getId()%>
                 </h2>
-                <section>
-                    <p><b>Nome do cliente: </b><%=pedido.getNomeCliente()%>
-                    </p>
-                    <h3>Endereço:</h3>
-                    <p><b>Rua: </b><%=pedido.getRua()%>
-                    </p>
-                    <p><b>Bairro: </b><%=pedido.getBairro()%>
-                    </p>
-                    <p><b>Número: </b><%=pedido.getNumero()%>
-                    </p>
-                </section>
                 <ul>
                     <% for (LanchePedido lanche : pedido.getLanches()) { %>
                     <li>

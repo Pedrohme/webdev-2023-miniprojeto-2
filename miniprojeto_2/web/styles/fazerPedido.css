@@ -38,6 +38,7 @@ article ul {
   box-shadow: 8px 8px 14px -7px #276873;
   border-radius: 10px;
   padding: 10px 20px;
+  align-self: stretch;
 }
 
 .card-title {

@@ -91,8 +91,8 @@
     <ul class="cards" id="pedidos">
     </ul>
     <div class="btn-div">
-        <button class="btn">Cancelar pedido</button>
-        <button class="btn">Confirmar pedido</button>
+        <a href="index.html" class="btn">Cancelar pedido</a>
+        <button id="confirmar" class="btn">Confirmar pedido</button>
     </div>
 </main>
 </body>
