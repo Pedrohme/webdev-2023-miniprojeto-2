@@ -23,7 +23,7 @@ public class PedidoAjaxServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            
+
     }
 
     @Override
@@ -36,7 +36,6 @@ public class PedidoAjaxServlet extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
 
 
-            out.println("<main>");
             out.println("    <h1 class=\"title\">Pedidos</h1>");
             out.println("    <ul class=\"cards\">");
             for (Pedido pedido : pedidos) {
@@ -91,7 +90,6 @@ public class PedidoAjaxServlet extends HttpServlet {
                 out.println("        </li>");
             }
             out.println("    </ul>");
-            out.println("</main>");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

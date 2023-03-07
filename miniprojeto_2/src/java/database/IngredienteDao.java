@@ -10,14 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class IngredienteDao {
-    private String GET_INGREDIENTES_QUERY = """
-                    SELECT
-                    	i.id AS ID_INGREDIENTE,
-                    	i.nome AS NOME_INGREDIENTE
-                    FROM
-                    	ingredientes i
-                    ORDER BY ID_INGREDIENTE ASC;
-            """;
+
+    private String GET_INGREDIENTES_QUERY = "SELECT"
+            + "                    	i.id AS ID_INGREDIENTE,"
+            + "                    	i.nome AS NOME_INGREDIENTE"
+            + "                    FROM"
+            + "                    	ingredientes i"
+            + "                    ORDER BY ID_INGREDIENTE ASC;";
 
     public List<Ingrediente> getAllIngredientes() throws SQLException {
         List<Ingrediente> ingredientes = new ArrayList<>();

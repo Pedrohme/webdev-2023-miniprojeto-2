@@ -12,18 +12,16 @@ import java.util.List;
 
 public class LancheDao {
 
-    private String GET_LANCHES_AND_INGREDIENTES_QUERY = """
-                    SELECT
-                    	l.id AS ID_LANCHE,
-                    	l.nome AS NOME_LANCHE,
-                    	i.id AS ID_INGREDIENTE,
-                    	i.nome AS NOME_INGREDIENTE
-                    FROM
-                    	lanches l
-                    	INNER JOIN lanche_ingredientes li ON l.id  = li.id_lanche
-                    	INNER JOIN ingredientes i ON i.id = li.id_ingrediente
-                    ORDER BY ID_LANCHE ASC;
-            """;
+    private String GET_LANCHES_AND_INGREDIENTES_QUERY = "SELECT"
+            + "                    	l.id AS ID_LANCHE,"
+            + "                    	l.nome AS NOME_LANCHE,"
+            + "                    	i.id AS ID_INGREDIENTE,"
+            + "                    	i.nome AS NOME_INGREDIENTE"
+            + "                    FROM"
+            + "                    	lanches l"
+            + "                    	INNER JOIN lanche_ingredientes li ON l.id  = li.id_lanche"
+            + "                    	INNER JOIN ingredientes i ON i.id = li.id_ingrediente"
+            + "                    ORDER BY ID_LANCHE ASC;";
 
     public List<Lanche> getAllLanches() throws SQLException {
         List<Lanche> lanches = new ArrayList<>();
