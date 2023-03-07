@@ -77,7 +77,9 @@
         </li>
         <%}%>
     </ul>
-    <button id="btn-atualizar"> Atualizar </button>
 </main>
+<footer>
+    <button id="btn-atualizar"> Atualizar </button>
+</footer>
 </body>
 </html>
