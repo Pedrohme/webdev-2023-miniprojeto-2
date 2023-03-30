@@ -23,6 +23,9 @@
 </head>
 <body>
 <main>
+    <form method="post" action="LogoutServlet">
+        <input type="submit">Logout</input>
+    </form>
     <h1 class="title">Pedidos</h1>
     <ul class="cards">
         <% for (Pedido pedido : pedidos) { %>
@@ -79,7 +82,7 @@
     </ul>
 </main>
 <footer>
-    <button id="btn-atualizar"> Atualizar </button>
+    <button id="btn-atualizar"> Atualizar</button>
 </footer>
 </body>
 </html>

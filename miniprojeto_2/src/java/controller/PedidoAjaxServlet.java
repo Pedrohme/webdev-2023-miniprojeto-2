@@ -35,7 +35,9 @@ public class PedidoAjaxServlet extends HttpServlet {
             response.setContentType("text/plain");
             response.setCharacterEncoding("UTF-8");
 
-
+            out.println("    <form method=\"post\" action=\"LogoutServlet\">");
+            out.println("        <input type=\"submit\">Logout</input>");
+            out.println("    </form>");
             out.println("    <h1 class=\"title\">Pedidos</h1>");
             out.println("    <ul class=\"cards\">");
             for (Pedido pedido : pedidos) {

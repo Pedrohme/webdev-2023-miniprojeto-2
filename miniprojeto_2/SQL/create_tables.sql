@@ -35,3 +35,16 @@ CREATE TABLE IF NOT EXISTS lanche_pedido_ingredientes_extras (
     FOREIGN KEY (id_lanche_pedido) REFERENCES lanche_pedido(id) ON UPDATE RESTRICT ON DELETE CASCADE,
     FOREIGN KEY (id_ingrediente) REFERENCES ingredientes(id) ON UPDATE RESTRICT ON DELETE CASCADE
 );
+CREATE TABLE IF NOT EXISTS usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255),
+    password VARCHAR(255),
+    UNIQUE (id, username)
+);
+CREATE TABLE IF NOT EXISTS sessao (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_session VARCHAR(255),
+    UNIQUE (id, id_usuario, id_session),
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON UPDATE RESTRICT ON DELETE CASCADE
+);

@@ -97,3 +97,6 @@ VALUES (1, 8, 0),
     (9, 15, 1),
     (13, 7, 0),
     (14, 9, 0);
+
+INSERT INTO usuario (username, password) VALUES ('admin', '12345678');
+INSERT INTO usuario (username, password) VALUES ('marcos', '87654321');
